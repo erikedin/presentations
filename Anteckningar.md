@@ -25,3 +25,19 @@ Det finns en `std::nullopt`.
 Hämta värdet med `value()`. Den kastar exceptions om den är tom.
 
 Finns en `make_optional`.
+
+Boost har en optional, som std::optional är baserad på.
+
+Struktur på presentationen
+==========================
+- Titel: std::optional (C++17)
+- Förklaring på en mening
+- Kodexempel för optional med värde och utan
+- Nullopt är en tom optional
+- När ska man använda den?
+- Finns i boost
+
+- Kommer från funktionell programmering
+    + I funktionell programmering används den med transformation
+    + Type monader i Haskell
+    

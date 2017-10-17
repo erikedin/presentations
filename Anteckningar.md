@@ -39,6 +39,8 @@ Struktur på presentationen
     + När man kan ha ett tomt värde i en collection
 - Finns i boost, _nästan_ samma som std::optional.
 
+- Finns -> och * tror jag
+
 - Kommer från funktionell programmering
     + I funktionell programmering används den med transformation
     + Type monader i Haskell

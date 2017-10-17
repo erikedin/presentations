@@ -32,7 +32,6 @@ class: center, middle
 ## Can represent the absence of a value.
 
 ---
-class: center, middle
 
 ## Holds the value 42
 ```cpp
@@ -52,7 +51,7 @@ std::optional<int> bar;
 ```cpp
 std::optional<int> foo(1);
 if (foo) {
-
+    // Yes, has value
 }
 ```
 
@@ -65,6 +64,26 @@ if (bar) {
     // that value is false.
 }
 ```
+
+---
+### Use `value()`, `operator*` to get the value
+```cpp
+std::optional<int> foo(42)
+if (foo) {
+    std::cout << foo.value() << std::endl; // Prints 42
+    std::cout << *foo << std::endl; // Prints 42
+}
+```
+
+--
+#### `std::optional<T>::value()` throws `std::bad_optional_access` if no value
+
+---
+## operator-> and operator* and undefined behaviour if there is no value
+
+--
+
+#AAAH!
 
 ---
 
@@ -97,6 +116,22 @@ for (auto it = m.begin(); it != m.end; ++it) {
     }
 }
 ```
+
+---
+
+## Is in `boost::optional`
+### With some changes in names of functions
+
+---
+## Comes from functional programming,
+
+--
+
+# BUT!
+
+--
+
+## No higher level transformations
 
     </textarea>
     <script src="remark-latest.min.js">

@@ -29,32 +29,74 @@ class: center, middle
 
 # What does it do?
 ## It's a class that either holds a value, or doesn't.
+## Can represent the absence of a value.
 
 ---
 class: center, middle
 
-# Holds the value 1
+## Holds the value 42
 ```cpp
-std::optional<int> foo(1);
+std::optional<int> foo(42);
 ```
 
-# Holds no value
+--
+
+## Holds no value
 ```cpp
 std::optional<int> bar;
+        ```
+
+---
+        
+## Check if an optional has a value
+```cpp
+std::optional<int> foo(1);
+if (foo) {
+
+}
+```
+
+--
+## Boolean gotcha
+```cpp
+std::optional<bool> bar(false)
+if (bar) {
+    // True, because bar has a value, even though
+    // that value is false.
+}
 ```
 
 ---
 
-class: center, middle
 
 ## When a function may return an empty value, use `std::optional`
 ```cpp
-std::optional<int> bar;
+std::optional<int> baz() {
+    // [.. do things here ..]
+    if (valueIsPresent) {
+        return std::make_optional(value);
+    }
+    return std::optional<int>();
+}
 ```
 
+```cpp
+auto maybeValue = baz();
+if (maybeValue) {
+    // Print some things here
+}
+```
 ---
 
-## 
+## In collections
+```cpp
+std::vector<std::optional<int>> m;
+for (auto it = m.begin(); it != m.end; ++it) {
+    if (*it) {
+        std::cout << it->value() << std::endl;
+    }
+}
+```
 
     </textarea>
     <script src="remark-latest.min.js">

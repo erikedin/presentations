@@ -35,9 +35,10 @@ Struktur på presentationen
 - Kodexempel för optional med värde och utan
 - Nullopt är en tom optional
 - När ska man använda den?
-- Finns i boost
+    + När en funktion kan returnera ett tomt värde
+    + När man kan ha ett tomt värde i en collection
+- Finns i boost, _nästan_ samma som std::optional.
 
 - Kommer från funktionell programmering
     + I funktionell programmering används den med transformation
     + Type monader i Haskell
-    

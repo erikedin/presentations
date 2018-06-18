@@ -43,6 +43,12 @@ class: center, middle
 
 ---
 
+class: center, middle
+
+# Ställ frågor, närsomhelst
+
+---
+
 # Varför enhetstester?
 ## Verifiera att koden beter sig som förväntat.
 
@@ -62,10 +68,12 @@ class: center, middle
 
 # Varför enhetstester?
 ## De tillhör utvecklingsfasen, inte testning-fasen.
+## Tänk på dom som specifikationer, inte tester.
 
 ---
 
-# Vad?
+# Varför enhetstester?
+## Förhindra buggar, inte hitta buggar
 
 ---
 
@@ -79,6 +87,7 @@ class: center, middle
 ## - har ett publikt gränssnitt
 ## - är nånting du kan skriva ett enkelt enhetstest för
 ## - har deterministiskt beteende
+## - går snabbt att köra tester för
 
 ---
 
@@ -97,9 +106,9 @@ class: center, middle
 ---
 
 # Vad?
-## Testar en aspekt av koden
-## Är deterministiskt
-## Enkelt att förstå
+## Testar _en_ aspekt av koden
+## Är deterministisk
+## Enkel att förstå
 
 ---
 
@@ -115,6 +124,7 @@ class: center, middle
 # Hur?
 ## Verifiera *endast en* aspekt per enhetstest
 ## Alltså blir enhetstester små.
+## Men det betyder inte nödvändigtvis bara _en_ assert.
 
 ---
 
@@ -220,6 +230,13 @@ def test_MakingCoffee_CappuccinoButtonPressed_CupHasCoffeeAndMilk(self):
 
 ---
 
+# TDD
+# En iteration ska ta i storleksordningen 1 minut
+
+---
+
+
+
 # Boktips
 # Working Effectively with Legacy Code
 # av Michael Feathers
@@ -232,6 +249,49 @@ def test_MakingCoffee_CappuccinoButtonPressed_CupHasCoffeeAndMilk(self):
 ## The Art of Unit Testing: with examples in C# ##
 ## av Roy Osherove
 ### Mycket bra om *hur* man skriver bra enhetster.
+
+---
+
+# Vad är BDD?
+
+---
+
+# TDD är en process för en individuell utvecklare.
+
+---
+
+# TDD är en process för en individuell utvecklare.
+# BDD är en process för många inblandade, allt från kund och kravställare till utvecklare.
+
+---
+
+# Ett problem folk har med TDD är:
+# - Men man kan ju inte skriva ett test innan det finns nåt att testa?
+
+---
+
+# Tänk inte på det som ett test,
+# tänk på det som en specifikation av beteende.
+
+---
+
+# BDD skriver krav på en läsbar form,
+# som också är exekverbar
+
+---
+
+```gherkin
+    Scenario: Making cappuccino
+      Given that the user has inserted the cup
+       When a cappuccino has been requested
+       Then the cup contains coffee and milk
+```
+
+```python
+
+```
+
+---
 
     </textarea>
     <script type="text/javascript">

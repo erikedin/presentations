@@ -185,7 +185,7 @@ def test_coffee3(self):
 ## Kontrolleras det faktiska beteendet mot det förväntade.
 
 ---
-
+### Exempel
 ```python
 def test_MakingCoffee_CappuccinoButtonPressed_CupHasCoffeeAndMilk(self):
       # Arrange
@@ -280,6 +280,8 @@ def test_MakingCoffee_CappuccinoButtonPressed_CupHasCoffeeAndMilk(self):
 
 ---
 
+### _Gherkin_ är ett krav-format
+
 ```gherkin
     Scenario: Making cappuccino
       Given that the user has inserted the cup
@@ -287,11 +289,28 @@ def test_MakingCoffee_CappuccinoButtonPressed_CupHasCoffeeAndMilk(self):
        Then the cup contains coffee and milk
 ```
 
+### och sen skriver man en funktion för varje rad
 ```python
+@given "that the user has inserted the cup"
+def step_impl(context):
+      context.cup = Cup()
+      context.machine = CoffeeMachine()
+      context.machine.cupInserted(cup)
 
+@when "a cappuccino has been requested"
+def step_impl(context):
+      context.machine.pressedCappuccino()
+
+@then "the cup contains coffee and milk"
+def step_impl(context):
+      @assert context.cup.coffee > 0.0
+      @assert context.cup.milk > 0.0
 ```
 
 ---
+class: center, middle
+
+# Slut på presentationen
 
     </textarea>
     <script type="text/javascript">
